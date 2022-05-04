@@ -30,8 +30,6 @@ public class PersistentAccountDAO  implements AccountDAO{
 
     @Override
     public List<Account> getAccountsList() {
-
-
         return myDb.getAccounts();
     }
 

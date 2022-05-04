@@ -13,7 +13,6 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Transaction;
 public class PersistentTransactionDAO implements TransactionDAO {
 
     private MyDataBase MyDb;
-
     public PersistentTransactionDAO(MyDataBase MyDb){
         this.MyDb = MyDb;
     }

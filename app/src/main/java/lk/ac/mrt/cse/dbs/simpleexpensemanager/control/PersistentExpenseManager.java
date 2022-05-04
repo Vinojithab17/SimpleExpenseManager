@@ -20,7 +20,6 @@ import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.PersistentTransactionDAO
 public class PersistentExpenseManager extends  ExpenseManager{
 
     private MyDataBase MyDb;
-
     public PersistentExpenseManager(Context context) throws ExpenseManagerException {
         super();
         this.MyDb = new MyDataBase(context);

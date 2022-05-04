@@ -179,7 +179,8 @@ public class MyDataBase extends SQLiteOpenHelper {
 
     public List<Transaction> getTransactions() {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c =db.rawQuery("SELECT "+ DATE +","+ ACC_NO +","+TYPE+","+AMOUNT+" FROM "+ LOG +" ;",null);
+        String test = "SELECT "+ DATE +","+ ACC_NO +","+TYPE+","+AMOUNT+" FROM "+ LOG;
+        Cursor c =db.rawQuery(test,null);
         List<Transaction> transactions = new ArrayList<Transaction>();
         if (c.moveToFirst()) {
             do {
