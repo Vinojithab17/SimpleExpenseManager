@@ -8,12 +8,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import java.text.DateFormat;
+import android.widget.Toast;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+//import java.time.format.DateTimeFormatter;
+//import java.time.LocalDate;
+
 
 
 public class MyDataBase extends SQLiteOpenHelper {
@@ -27,7 +31,7 @@ public class MyDataBase extends SQLiteOpenHelper {
     public static final String AMOUNT="amount";
 
     public static final String ACCOUNT ="account";
-    public static final String ACC_NO ="acc_No";
+    public static final String ACC_NO ="account_No";
     public static final String BANK="bank";
     public static final String ACC_HOLDER="acc_holder";
     public static final String BALANCE ="balance";
