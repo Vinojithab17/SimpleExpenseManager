@@ -27,7 +27,7 @@ public class MyDataBase extends SQLiteOpenHelper {
     public static final String AMOUNT="amount";
 
     public static final String ACCOUNT ="account";
-    public static final String ACC_NO ="acc_No";
+    public static final String ACC_NO ="account_No";
     public static final String BANK="bank";
     public static final String ACC_HOLDER="acc_holder";
     public static final String BALANCE ="balance";
