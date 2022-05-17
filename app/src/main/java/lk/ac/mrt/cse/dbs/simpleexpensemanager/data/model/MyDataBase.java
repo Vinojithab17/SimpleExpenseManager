@@ -18,6 +18,7 @@ import java.util.Locale;
 //import java.time.format.DateTimeFormatter;
 //import java.time.LocalDate;
 
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.control.exception.ExpenseManagerException;
 
 
 public class MyDataBase extends SQLiteOpenHelper {
@@ -38,7 +39,7 @@ public class MyDataBase extends SQLiteOpenHelper {
 
     public MyDataBase (@Nullable Context context) {
 
-        super(context, "190650B.db", null, 1);
+        super(context, "190650Bnew.db", null, 1);
         this.context= context;
 
     }
@@ -163,21 +164,24 @@ public class MyDataBase extends SQLiteOpenHelper {
 
     }
 
-    public void addLog(Date date, String acc_No, ExpenseType type, Double amount){
+    public boolean addLog(String date, String acc_No, ExpenseType type, Double amount){
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues cv =new ContentValues();
 
 
-
-        cv.put(DATE, date.toString());
+        cv.put(DATE, date);
         cv.put(ACCOUNT_NO,acc_No);
         cv.put(TYPE, String.valueOf(type));
         cv.put(AMOUNT,amount);
+        try{
+            db.insert(LOG,null,cv);
+            return true;
 
-        db.insert(LOG,null,cv);
-
+        }catch(Exception e){ return false; }
 
     }
+
+
 
 
 

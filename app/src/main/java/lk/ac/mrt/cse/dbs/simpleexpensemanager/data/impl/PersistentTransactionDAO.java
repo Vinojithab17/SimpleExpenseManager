@@ -19,7 +19,7 @@ public class PersistentTransactionDAO implements TransactionDAO {
 
     @Override
     public void logTransaction(Date date, String accountNo, ExpenseType expenseType, double amount) {
-        MyDb.addLog(date,accountNo,expenseType,amount);
+        MyDb.addLog(date.toString(),accountNo,expenseType,amount);
 
     }
 
