@@ -16,8 +16,14 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
         
-      - name: Make gradlew executable
+      - name: Change wrapper permissions
         run: chmod +x ./gradlew
+        
+      - name: Build with Gradle
+        run: ./gradlew build
+        
+      - name: Test
+        run: ./gradlew test
 
       - name: Gradle cache
         uses: gradle/gradle-build-action@v2
